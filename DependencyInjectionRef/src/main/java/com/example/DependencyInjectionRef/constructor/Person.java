@@ -1,0 +1,21 @@
+package com.example.DependencyInjectionRef.constructor;
+
+public class Person {
+    private String name;
+    private int id;
+    public Person(){
+        super();
+    }
+    public Person(String name, int id){
+        this.name=name;
+        this.id=id;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <bean class="com.example.DependencyInjectionRef.constructor.Person" name="consObj1" >
+        <constructor-arg value="Avinash" />
+        <constructor-arg value="15" type="int" />
+    </bean>
+    <bean class="com.example.DependencyInjectionRef.constructor.Person" name="consObj2" >
+        <constructor-arg value="Abhijeet" />
+        <constructor-arg value="45" type="int" />
+    </bean>
+</beans>
