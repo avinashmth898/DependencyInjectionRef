@@ -8,12 +8,23 @@
        http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd" >
 
+    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar1" >
+        <constructor-arg value="BMW" />
+        <constructor-arg value="4500000" type="int" />
+    </bean>
+    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar2" >
+        <constructor-arg value="AUDI" />
+        <constructor-arg value="5000000" type="int" />
+    </bean>
     <bean class="com.example.DependencyInjectionRef.constructor.Person" name="consObj1" >
         <constructor-arg value="Avinash" />
         <constructor-arg value="15" type="int" />
+        <constructor-arg ref="consObjCar2" />
     </bean>
     <bean class="com.example.DependencyInjectionRef.constructor.Person" name="consObj2" >
         <constructor-arg value="Abhijeet" />
         <constructor-arg value="45" type="int" />
+        <constructor-arg ref="consObjCar1" />
     </bean>
+
 </beans>

@@ -16,5 +16,7 @@
         <property name="ob" >
             <ref bean="bref" />
         </property>
+
     </bean>
+<!--    <bean> </bean>-->
 </beans>
