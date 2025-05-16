@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
@@ -12,10 +13,17 @@
         <constructor-arg value="BMW" />
         <constructor-arg value="4500000" type="int" />
     </bean>
-    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar2" >
-        <constructor-arg value="AUDI" />
-        <constructor-arg value="5000000" type="int" />
-    </bean>
+<!--    Since we have added c schema to our file  -->
+<!--    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar2" >-->
+<!--        <constructor-arg value="AUDI" />-->
+<!--        <constructor-arg value="5000000" type="int" />-->
+<!--    </bean>-->
+
+
+    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar2" c:name="AUDI" c:price="5000000"/>
+<!--        <constructor-arg value="AUDI" />-->
+<!--        <constructor-arg value="5000000" type="int" />-->
+<!--    </bean>-->
     <bean class="com.example.DependencyInjectionRef.constructor.Person" name="consObj1" >
         <constructor-arg value="Avinash" />
         <constructor-arg value="15" type="int" />
@@ -28,3 +36,6 @@
     </bean>
 
 </beans>
+
+<!--p schema for properties -->
+<!--c schema for constructors-->

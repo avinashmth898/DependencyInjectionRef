@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <bean class="com.example.DependencyInjectionRef.assgnmet.CarA" name="consObjCar1A" >
+        <constructor-arg value="BMW" />
+        <constructor-arg value="4500000" type="int" />
+    </bean>
+    <!--    Since we have added c schema to our file  -->
+    <!--    <bean class="com.example.DependencyInjectionRef.constructor.Car" name="consObjCar2" >-->
+    <!--        <constructor-arg value="AUDI" />-->
+    <!--        <constructor-arg value="5000000" type="int" />-->
+    <!--    </bean>-->
+
+
+    <bean class="com.example.DependencyInjectionRef.assgnmet.CarA"
+          name="consObjCar2A" c:name="AUDI" c:price="5000000"/>
+    <!--        <constructor-arg value="AUDI" />-->
+    <!--        <constructor-arg value="5000000" type="int" />-->
+    <!--    </bean>-->
+    <bean class="com.example.DependencyInjectionRef.assgnmet.PersonA" name="consObj1A" >
+        <constructor-arg value="Avinash" />
+        <constructor-arg value="15" type="int" />
+        <constructor-arg ref="consObjCar1A" />
+        <constructor-arg>
+            <list>
+                <value>Ishi</value>
+                <value>Suyash</value>
+                <value>Nikhil</value>
+                <value>Sushil</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean class="com.example.DependencyInjectionRef.assgnmet.PersonA" name="consObj2A"
+          c:name="Abhijeet" c:id="45" c:car-ref="consObjCar2A" c:famName="Avinash, Abhijeet, Amisha, Ishi, Manju" />
+
+<!--        <constructor-arg value="Abhijeet" />-->
+<!--        <constructor-arg value="45" type="int" />-->
+<!--        <constructor-arg ref="consObjCar1" />-->
+
+</beans>
+
+        <!--p schema for properties -->
+        <!--c schema for constructors-->
